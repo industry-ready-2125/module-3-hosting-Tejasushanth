@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        background-image:url(background.jpg);
+        background-size: cover; 
+    }
+    form {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    input {
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4c06f1;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #4c06f1;
+    }
+</style></head>
+<body>
+
+<form id="registrationForm">
+    <input type="text" id="username" placeholder="Username (at least 6 characters)">
+    <input type="password" id="password" placeholder="Password (at least 8 characters)">
+    <input type="password" id="confirmPassword" placeholder="Confirm Password">
+    <input type="email" id="email" placeholder="Email (yourname@domain.com)">
+    <input type="text" id="mobile" placeholder="Mobile Number (10 digits starting from 6-9)">
+    <button type="button" onclick="validateRegistration()">Register</button>
+</form>
+
+<script>
+function validateRegistration() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+    var email = document.getElementById("email").value;
+    var mobile = document.getElementById("mobile").value;
+    var usernameRegex = /^.{6,}$/; // At least 6 characters for username
+    var passwordRegex = /^.{8,}$/; // At least 8 characters for password
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Email format validation
+    var mobileRegex = /^[6-9]\d{9}$/; // 10 digits starting from 6-9 for mobile number
+    if (!usernameRegex.test(username)) {
+        alert("Username must be at least 6 characters long.");
+        return;
+    }
+    if (!passwordRegex.test(password)) {
+        alert("Password must be at least 8 characters long.");
+        return;
+    }
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+    }
+    if (!emailRegex.test(email)) {
+        alert("Invalid email format.");
+        return;
+    }
+    if (!mobileRegex.test(mobile)) {
+        alert("Mobile number must be 10 digits starting from 6-9.");
+        return;
+    }
+    alert("Registration successful!");
+}
+</script>
+
+</body>
+</html>
