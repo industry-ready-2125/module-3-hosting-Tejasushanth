@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;      
+        display: flex;        
+        align-items: center;
+        height: 100vh;
+        background-image:url(background.jpg);
+        background-size: cover;     
+    }
+    form {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    input {
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4c06f1;
+        color: white;
+        border: 10px;
+        cursor: pointer; 
+    }
+    button:hover {
+        background-color: #4c06f1;
+    }
+    .forgot-password,
+    .sign-up {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+</style>
+</head>
+<body>
+
+<form id="loginForm">
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button type="button" onclick="validateLogin()">Login</button>
+    <div class="forgot-password">
+        <a href="#" style="color: antiquewhite;">Forgot Password</a>
+    </div>
+    <div class="sign-up">
+        <span>Don't have an account? </span><a href="page03.html" style="color: #fff;">Sign Up</a>
+    </div>
+</form>
+
+<script>
+    function validateLogin() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var usernameRegex = /^[a-zA-Z0-9_-]{3,16}$/;
+        var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+        if (!usernameRegex.test(username)) {
+            alert("Username must be alphanumeric, underscore, or hyphen and 3-16 characters long.");
+            return;
+        }
+        if (!passwordRegex.test(password)) {
+            alert("Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, and one number.");
+            return;
+        }
+        alert("Login successful!");
+    }
+</script>
+
+</body>
+</html>
