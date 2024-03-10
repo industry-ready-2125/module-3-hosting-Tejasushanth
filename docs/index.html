@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main page</title>
+    <link href="https://fonts.cdnfonts.com/css/open-sans" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        }
+        header{
+            height: 100px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        ul{
+            display: flex;
+            list-style-type: none;
+            align-items: center;
+        }
+         ul li a{
+            padding: 0 20px;
+            text-decoration: none;
+            color: #3a3a3a;
+            display: inline-block;
+         }
+        .container ul li a{
+            display: flex;
+            text-align: center;
+            justify-content: space-around;
+            padding: 0 20px;
+            margin-right: 80px;
+            font-size: larger;
+            display: inline-block;
+        }
+         li a::after{
+            content: '';
+            display: block;
+            height: 4px;
+            width: 0;
+            background: #c4c4f7;
+            transition:all .5s;
+         }
+         li a:hover::after{
+            width: 100%;
+         }
+        
+         main{
+            display: flex;
+            height: calc(100vh - 100px);
+            align-items: center;
+            justify-content: center;
+         }
+        .img{
+            max-width: 690px;
+            height: auto;
+        }
+        .content-left{
+            width: 30%;
+        }
+        main h1{
+            font-size: 54px;
+            color: #133B4F;
+            text-transform: uppercase;
+        } main p{
+            font-size: 14px;
+            font-weight: 400;
+            color: #333;
+            line-height: 31.5px;
+            margin: 30px 0;
+        }
+        .signup-btn{
+            padding: 15px 50px;
+            background: #C4c4f7;
+            color: #133B4F;
+            outline: none;
+            border: none;
+            font-weight: 1000;
+            text-transform: uppercase;
+            border-radius: 100px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo" width="150px"]>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="content-left">
+            <h1>Digital Marketing</h1>
+            <p>Digital marketing, also called online marketing, is the promotion of brands to connect with potential customers using the internet and other forms of digital communication. This includes not only email, social media, and web-based advertising, but also text and multimedia messages as a marketing channel.</p>
+            <div class="container">
+                <ul>
+                    <li><a href="page02.html" class="signup-btn" target="_blank">Login</a></li>
+                    <li><a href="page03.html" class="signup-btn" target="_blank">Sign up</a></li>
+                </ul>                
+            </div>
+        </div>
+        <div class="content-right">
+            <img src="digital.jpg" alt="Descriptor" class="img">
+        </div>
+    </main>
+</body>
+</html>
